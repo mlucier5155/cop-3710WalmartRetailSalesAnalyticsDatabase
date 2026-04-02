@@ -1,0 +1,101 @@
+EmployeeID,EmployeePosition,StoreID
+E0001,Manager,10001
+E0002,Stocker,10001
+E0003,Stocker,10001
+E0004,Sales Associate,10001
+E0005,Cart Attendant,10001
+E0006,Cart Attendant,10001
+E0007,Cashier,10001
+E0008,Cashier,10001
+E0009,Cashier,10001
+E0010,Cashier,10001
+E0011,Cashier,10001
+E0012,Cashier,10001
+E0013,Cashier,10001
+E0014,Cashier,10001
+E0015,Cashier,10001
+E0016,Cashier,10001
+E0017,Manager,10002
+E0018,Stocker,10002
+E0019,Stocker,10002
+E0020,Sales Associate,10002
+E0021,Cart Attendant,10002
+E0022,Cart Attendant,10002
+E0023,Cashier,10002
+E0024,Cashier,10002
+E0025,Cashier,10002
+E0026,Cashier,10002
+E0027,Cashier,10002
+E0028,Cashier,10002
+E0029,Cashier,10002
+E0030,Cashier,10002
+E0031,Cashier,10002
+E0032,Cashier,10002
+E0033,Cashier,10002
+E0034,Manager,10003
+E0035,Stocker,10003
+E0036,Stocker,10003
+E0037,Stocker,10003
+E0038,Stocker,10003
+E0039,Stocker,10003
+E0040,Sales Associate,10003
+E0041,Cart Attendant,10003
+E0042,Cart Attendant,10003
+E0043,Cashier,10003
+E0044,Cashier,10003
+E0045,Cashier,10003
+E0046,Cashier,10003
+E0047,Cashier,10003
+E0048,Cashier,10003
+E0049,Cashier,10003
+E0050,Cashier,10003
+E0051,Manager,10004
+E0052,Stocker,10004
+E0053,Stocker,10004
+E0054,Stocker,10004
+E0055,Sales Associate,10004
+E0056,Cart Attendant,10004
+E0057,Cart Attendant,10004
+E0058,Cart Attendant,10004
+E0059,Cashier,10004
+E0060,Cashier,10004
+E0061,Cashier,10004
+E0062,Cashier,10004
+E0063,Cashier,10004
+E0064,Cashier,10004
+E0065,Cashier,10004
+E0066,Cashier,10004
+E0067,Cashier,10004
+E0068,Manager,10005
+E0069,Stocker,10005
+E0070,Stocker,10005
+E0071,Stocker,10005
+E0072,Sales Associate,10005
+E0073,Cart Attendant,10005
+E0074,Cart Attendant,10005
+E0075,Cashier,10005
+E0076,Cashier,10005
+E0077,Cashier,10005
+E0078,Cashier,10005
+E0079,Cashier,10005
+E0080,Cashier,10005
+E0081,Cashier,10005
+E0082,Cashier,10005
+E0083,Cashier,10005
+E0084,Manager,10006
+E0085,Stocker,10006
+E0086,Stocker,10006
+E0087,Sales Associate,10006
+E0088,Cart Attendant,10006
+E0089,Cart Attendant,10006
+E0090,Cashier,10006
+E0091,Cashier,10006
+E0092,Cashier,10006
+E0093,Cashier,10006
+E0094,Cashier,10006
+E0095,Cashier,10006
+E0096,Cashier,10006
+E0097,Cashier,10006
+E0098,Cashier,10006
+E0099,Cashier,10006
+E0100,Cashier,10006
