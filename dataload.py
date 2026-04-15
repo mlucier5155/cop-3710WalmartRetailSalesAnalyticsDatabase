@@ -6,7 +6,7 @@ LIB_DIR = r"C:\oracle\instantclient_21_3"
 
 # Your Oracle Credentials
 DB_USER = "lvelazquez8474@floridapoly.edu" # or your FreeSQL username
-DB_PASS = "snooP1NG@S"
+DB_PASS = ""
 DB_DSN = "localhost:1521/xe" # or your FreeSQL DSN
 
 # Initialize Thick Mode (Required for FreeSQL/Cloud)
