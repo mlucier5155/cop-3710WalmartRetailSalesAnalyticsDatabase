@@ -45,9 +45,3 @@ FROM STORE s
 JOIN CIRCUMSTANCE c
 ON s.Location = c.Location
 ORDER BY s.StoreID;
-
--- Bonus Feature 6: Highest Weekly Sale
-SELECT *
-FROM STORE_DATE
-ORDER BY Weekly_Sales DESC
-FETCH FIRST 1 ROW ONLY;
