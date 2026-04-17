@@ -1,0 +1,34 @@
+# Walmart Retail Sales Analytics Database
+
+## Part E Application
+
+This project contains a Python application that connects to a FreeSQL MySQL database.
+
+## Features
+
+1. View Weekly Sales by Store
+2. View Employees by Store
+3. View Holiday Sales
+4. View Store Hours
+5. View Sales + Economic Conditions
+
+## How to Run
+
+1. Install dependencies:
+
+pip install -r requirements.txt
+
+2. Edit app.py:
+
+Replace:
+- YOUR_HOST
+- YOUR_DATABASE
+- YOUR_USERNAME
+
+3. Run:
+
+python app.py
+
+## Screenshots
+
+Screenshots are stored in /screenshots
