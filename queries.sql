@@ -1,7 +1,4 @@
--- ==========================================
--- Walmart Retail Sales Analytics Queries
--- Part E Features
--- ==========================================
+
 
 -- Feature 1: Weekly Sales by Date Range
 SELECT SalesDate, Weekly_Sales
