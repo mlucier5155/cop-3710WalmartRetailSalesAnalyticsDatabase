@@ -1,44 +1,41 @@
 
-
--- Feature 1: Weekly Sales by Date Range
-SELECT SalesDate, Weekly_Sales
+-- Feature 1: Weekly Sales Report
+SELECT Date_DD_MM_YYYY, WeeklySales
 FROM STORE_DATE
-WHERE SalesDate BETWEEN DATE '2024-01-01' AND DATE '2024-02-01'
-ORDER BY SalesDate;
+ORDER BY Date_DD_MM_YYYY;
 
 -- Feature 2: Holiday Sales
-SELECT SalesDate, Weekly_Sales, Holiday_Events
+SELECT Date_DD_MM_YYYY, WeeklySales, Holiday
 FROM STORE_DATE
-WHERE Holiday_Flag = 'Yes';
+WHERE Holiday = 'Yes';
 
 -- Feature 3: Employees by Store (JOIN)
 SELECT e.EmployeeID,
-       e.EmployeeName,
        e.EmployeePosition,
        s.StoreID,
-       s.Location
+       s.Store_Location
 FROM EMPLOYEE e
 JOIN STORE s
 ON e.StoreID = s.StoreID
 ORDER BY s.StoreID;
 
--- Feature 4: Sales + Store Hours (JOIN)
-SELECT sd.SalesDate,
-       sd.Weekly_Sales,
+-- Feature 4: Store Hours by Store (JOIN)
+SELECT sh.Day_ofWeek,
        sh.Store_Hours,
-       sh.Pharmacy_Hours
-FROM STORE_DATE sd
-JOIN STORE_HOURS sh
-ON sd.Day_ofWeek = sh.Day_ofWeek
-ORDER BY sd.SalesDate;
+       sh.Pharmacy_Hours,
+       s.Store_Location
+FROM STORE_HOURS sh
+JOIN STORE s
+ON sh.StoreID = s.StoreID
+ORDER BY sh.DayID;
 
 -- Feature 5: Economic Conditions by Store (JOIN)
 SELECT s.StoreID,
-       s.Location,
+       s.Store_Location,
        c.Fuel_Price,
        c.Unemployment,
        c.Temperature
 FROM STORE s
 JOIN CIRCUMSTANCE c
-ON s.Location = c.Location
+ON s.Store_Location = c.Store_Location
 ORDER BY s.StoreID;
