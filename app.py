@@ -1,8 +1,8 @@
 import oracledb
 
-USERNAME = "mlucier7527@floridapoly.edu"
-PASSWORD = "Razer5151!"
-DSN = "localhost/XEPDB1"   # Replace if needed
+USERNAME = "YOUR_USERNAME"
+PASSWORD = "YOUR_PASSWORD"
+DSN = "localhost/XEPDB1"
 
 def connect_db():
     try:
@@ -17,29 +17,24 @@ def connect_db():
         return None
 
 def show(rows):
-    if not rows:
-        print("No rows found.\n")
-        return
     for row in rows:
         print(row)
     print()
 
 def menu():
-    print("====================================")
-    print(" Walmart Retail Analytics Dashboard ")
-    print("====================================")
-    print("1. Weekly Sales by Date Range")
+    print("===================================")
+    print(" Walmart Retail Analytics Dashboard")
+    print("===================================")
+    print("1. Weekly Sales")
     print("2. Holiday Sales")
     print("3. Employees by Store")
-    print("4. Sales + Store Hours")
+    print("4. Store Hours by Store")
     print("5. Economic Conditions")
     print("0. Exit")
 
 def main():
     conn = connect_db()
-
     if conn is None:
-        print("Use Oracle Worksheet if direct connection unavailable.")
         return
 
     cur = conn.cursor()
@@ -49,28 +44,27 @@ def main():
         choice = input("Choose option: ")
 
         if choice == "1":
-            start = input("Enter start date (YYYY-MM-DD): ")
-            end = input("Enter end date (YYYY-MM-DD): ")
-
-            cur.execute(f"""
-                SELECT SalesDate, Weekly_Sales
+            cur.execute("""
+                SELECT Date_DD_MM_YYYY, WeeklySales
                 FROM STORE_DATE
-                WHERE SalesDate BETWEEN DATE '{start}' AND DATE '{end}'
-                ORDER BY SalesDate
+                ORDER BY Date_DD_MM_YYYY
             """)
             show(cur.fetchall())
 
         elif choice == "2":
             cur.execute("""
-                SELECT SalesDate, Weekly_Sales, Holiday_Events
+                SELECT Date_DD_MM_YYYY, WeeklySales, Holiday
                 FROM STORE_DATE
-                WHERE Holiday_Flag='Yes'
+                WHERE Holiday='Yes'
             """)
             show(cur.fetchall())
 
         elif choice == "3":
             cur.execute("""
-                SELECT e.EmployeeName, e.EmployeePosition, s.Location
+                SELECT e.EmployeeID,
+                       e.EmployeePosition,
+                       s.StoreID,
+                       s.Store_Location
                 FROM EMPLOYEE e
                 JOIN STORE s
                 ON e.StoreID = s.StoreID
@@ -79,21 +73,26 @@ def main():
 
         elif choice == "4":
             cur.execute("""
-                SELECT sd.SalesDate, sd.Weekly_Sales,
-                       sh.Store_Hours, sh.Pharmacy_Hours
-                FROM STORE_DATE sd
-                JOIN STORE_HOURS sh
-                ON sd.Day_ofWeek = sh.Day_ofWeek
+                SELECT sh.Day_ofWeek,
+                       sh.Store_Hours,
+                       sh.Pharmacy_Hours,
+                       s.Store_Location
+                FROM STORE_HOURS sh
+                JOIN STORE s
+                ON sh.StoreID = s.StoreID
             """)
             show(cur.fetchall())
 
         elif choice == "5":
             cur.execute("""
-                SELECT s.StoreID, s.Location,
-                       c.Fuel_Price, c.Unemployment, c.Temperature
+                SELECT s.StoreID,
+                       s.Store_Location,
+                       c.Fuel_Price,
+                       c.Unemployment,
+                       c.Temperature
                 FROM STORE s
                 JOIN CIRCUMSTANCE c
-                ON s.Location = c.Location
+                ON s.Store_Location = c.Store_Location
             """)
             show(cur.fetchall())
 
